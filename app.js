@@ -81,7 +81,7 @@ app.get("/districts/:districtId/", async (request, response) => {
 app.delete("/districts/:districtId/", async (request, response) => {
   const { districtId } = request.params;
   const deleteDistrictQuery = `
-    DELETE * FROM district WHERE district_id = '${districtId}';`;
+    DELETE FROM district WHERE district_id = '${districtId}';`;
   await db.run(deleteDistrictQuery);
   response.send("District Removed");
 });

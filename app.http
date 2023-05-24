@@ -1,4 +1,4 @@
-get http://localhost:3000/states/
+GET http://localhost:3000/states/
 
 ###
 
