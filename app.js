@@ -36,7 +36,9 @@ app.get("/states/", async (request, response) => {
 app.get("/states/:stateId/", async (request, response) => {
   const { stateId } = request.params;
   const stateDetails = `
-    SELECT * FROM state WHERE state_id = '${stateId}';`;
+    SELECT state_id as stateId, 
+    state_name as stateName,population
+     FROM state WHERE state_id = '${stateId}';`;
   const state = await db.get(stateDetails);
   response.send(state);
 });
